@@ -1,0 +1,24 @@
+# for python
+venv/
+
+# for ollama
+ollama/
+
+# For node
+node_modules/
+
+# For vscode
+.vscode/
+
+# For pycache
+__pycache__/
+
+# for mac
+.DS_Store
+
+# for pyproject.toml
+pyproject.toml
+
+# for poetry.lock
+poetry.lock
+
