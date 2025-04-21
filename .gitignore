@@ -22,3 +22,4 @@ pyproject.toml
 # for poetry.lock
 poetry.lock
 
+.env
