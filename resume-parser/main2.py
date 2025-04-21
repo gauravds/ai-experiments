@@ -1,57 +1,14 @@
 import requests
-from io import BytesIO
 import json
-import docx
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
-from langchain.prompts import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-)
-from langchain_core.output_parsers import JsonOutputParser
-from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
-import tempfile
 import os
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
 
-
-# === STEP 1: Download Resume from Public URL ===
-def fetch_resume_text_from_url(url):
-    response = requests.get(url)
-    content_type = response.headers.get("Content-Type", "").lower()
-
-    # Create a temporary file to save the downloaded content
-    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-        temp_file.write(response.content)
-        temp_path = temp_file.name
-
-    try:
-        if "pdf" in content_type or url.endswith(".pdf"):
-            loader = PyPDFLoader(temp_path)
-            docs = loader.load()
-            text = "\n".join(doc.page_content for doc in docs)
-        elif "word" in content_type or url.endswith(".docx"):
-            loader = Docx2txtLoader(temp_path)
-            docs = loader.load()
-            text = "\n".join(doc.page_content for doc in docs)
-        elif "text" in content_type or url.endswith(".txt"):
-            loader = TextLoader(temp_path)
-            docs = loader.load()
-            text = "\n".join(doc.page_content for doc in docs)
-        else:
-            raise ValueError(
-                "Unsupported file type. Only PDF, DOCX, or TXT are supported."
-            )
-
-        return text.strip()
-    finally:
-        # Clean up the temporary file
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # SYSTEM PROMPT
 system_prompt = """
@@ -99,44 +56,44 @@ Follow these rules strictly:
    - Normalize vague skill names (e.g., 'experienced with EHR' → 'Electronic Health Records (EHR)')
    - Break combined entries (e.g., 'Geriatric and Pediatric specialization') into two skills
    - Deduplicate and clean skills into standard terminology
-   - Do not include language fluency in the  skills  array
-   - Standardise  skills  array
-   - skills array should include skills relevant to resume  skills  array
-   - Instead, extract language fluency and place in the  languages  array
+   - Do not include language fluency in the  `skills`  array
+   - Standardise  `skills`  array
+   - `skills` array should include skills relevant to resume  `skills`  array
+   - Instead, extract language fluency and place in the  `languages`  array
    - Example: 'Fluent in Spanish' → 'Spanish'
-   - Structure experience into clean bullet points under  description 
+   - Structure experience into clean bullet points under  `description` 
    - Standardize formatting of dates, companies, job titles, and institutions
    - Infer semantic skills and total experience if not explicitly mentioned
-   - Infer and populate  current_job_title  from the most recent experience if not explicitly mentioned
-   - If resume contains licensing or credentials, populate under  certifications  with appropriate issuer/year
-   - Populate  resume_score  (0–100) based on completeness, clarity, formatting, and ATS readiness
-   - Provide a brief  strengths_vs_weaknesses  comparison (concise bullet or sentence summary)
+   - Infer and populate  `current_job_title`  from the most recent experience if not explicitly mentioned
+   - If resume contains licensing or credentials, populate under  `certifications`  with appropriate issuer/year
+   - Populate  `resume_score`  (0–100) based on completeness, clarity, formatting, and ATS readiness
+   - Provide a brief  `strengths_vs_weaknesses`  comparison (concise bullet or sentence summary)
    - Normalize skill entries for consistency, e.g., avoid phrases like "Experienced with..."
 
 4. Identify and extract any *projects*, even if they are embedded inside work experience:
    - Treat any sentence that describes building, launching, or contributing to a tool, product, or system as a project
-   - Extract such information into the  projects  array, even if not under a 'Projects' section
+   - Extract such information into the  `projects`  array, even if not under a 'Projects' section
    - Each project must include:
-     -  name : inferred or explicit project title
-     -  description : brief summary of what the project accomplished
-     -  tech_stack : list of tools or technologies used
-     -  url : if explicitly mentioned, else null
+     -  `name` : inferred or explicit project title
+     -  `description` : brief summary of what the project accomplished
+     -  `tech_stack` : list of tools or technologies used
+     -  `url` : if explicitly mentioned, else null
    - Place all such extracted items in a dedicated  projects  array at the top level
 
 5. Add career insights:
-   - Predict  next_roles 
-   - Recommend  required_skills_to_advance 
-   - Estimate  resume_score  (0–100) based on quality of content
-   - Summarize  strengths_vs_weaknesses 
-   - Provide a 2-line  executive_summary  and overall  branding_tone 
-   - Suggest  career_path_prediction 
-   - Return  promotion_projection  with estimated_time and readiness_percent
-   - Generate  job_fit_scores : each with job_title, match_percent, and reasons
+   - Predict  `next_roles`
+   - Recommend  `required_skills_to_advance` 
+   - Estimate  `resume_score`  (0–100) based on quality of content
+   - Summarize  `strengths_vs_weaknesses`
+   - Provide a 2-line  `executive_summary`  and overall  `branding_tone` 
+   - Suggest  `career_path_prediction` 
+   - Return  `promotion_projection`  with `estimated_time` and `readiness_percent`
+   - Generate  `job_fit_scores` : each with `job_title`, `match_percent`, and `reasons` 
 
 6. Classify job title:
-   - Extract the user's current role into  current_job_title 
-   - Output a standardized  classified_job_title  (e.g., 'Registered Nurse')
-   - Output  job_level  from ['Internship', 'Entry-level', 'Mid-level', 'Senior', 'Leadership']
+   - Extract the user's current role into  `current_job_title` 
+   - Output a standardized  `classified_job_title`  (e.g., 'Registered Nurse')
+   - Output  `job_level`  from ['Internship', 'Entry-level', 'Mid-level', 'Senior', 'Leadership']
 
 7. If any field is not available, return it as null (for objects/strings/numbers) or an empty array (for lists).
    Do not leave any key out from the structured JSON response.
@@ -147,8 +104,8 @@ Return only the final structured JSON using the function format.
 
 The JSON schema must follow this format:
 
-{{
-  "basic_info": {{
+{
+  "basic_info": {
     "full_name": "",
     "job_title": "",
     "location": "",
@@ -156,54 +113,54 @@ The JSON schema must follow this format:
     "email": "",
     "website": "",
     "years_of_experience": ""
-  }},
+  },
   "professional_summary": "",
   "skills": [],
   "semantic_skills": [],
   "certifications": [],
   "education": [
-    {{
+    {
       "degree": "",
       "institution": "",
       "start_year": "",
       "end_year": "",
       "location": ""
-    }}
+    }
   ],
   "work_experience": [
-    {{
+    {
       "job_title": "",
       "company": "",
       "start_date": "",
       "end_date": "",
       "location": "",
       "description": ""
-    }}
+    }
   ],
   "projects": [
-    {{
+    {
       "title": "",
       "description": "",
       "technologies": []
-    }}
+    }
   ],
   "awards": [],
   "languages": [],
   "interests": [],
-  "career_insights": {{
+  "career_insights": {
     "resume_score": "",
     "predicted_experience_level": "",
     "branding_score": "",
     "executive_summary": "",
     "keywords_matched": [],
     "job_fit_scores": [
-      {{
+      {
         "role": "",
         "match_percentage": ""
-      }}
+      }
     ]
-  }}
-}}
+  }
+}
 
 General Rules:
 - Normalize all dates to YYYY-MM format or just YYYY if month is unknown.
@@ -212,24 +169,22 @@ General Rules:
 - `career_insights` fields may be machine-generated; use placeholders unless available.
 """
 
-# === STEP 3: LangChain Setup ===
-prompt = ChatPromptTemplate.from_messages(
-    [
-        SystemMessagePromptTemplate.from_template(system_prompt),
-        HumanMessagePromptTemplate.from_template("{resume_text}"),
-    ]
-)
 
-parser = JsonOutputParser()
-llm = ChatOpenAI(model="gpt-4o", temperature=0)
-chain = prompt | llm | parser
-
-
-# === STEP 4: Process from URL ===
+# === Process resume directly using OpenAI ===
 def process_resume_from_url(public_url):
-    resume_text = fetch_resume_text_from_url(public_url)
-    structured_json = chain.invoke({"resume_text": resume_text})
-    return structured_json
+    # Create a message with the system prompt and the URL
+    response = client.chat.completions.create(
+        model="gpt-4o",  # or "gpt-4-vision-preview" if you want to use vision capabilities
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"Parse the resume at this URL: {public_url}"},
+        ],
+        response_format={"type": "json_object"},
+    )
+
+    # Extract and parse the JSON response
+    result = json.loads(response.choices[0].message.content)
+    return result
 
 
 # === Example Usage ===
