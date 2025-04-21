@@ -1,0 +1,185 @@
+{
+  "basic_info": {
+    "full_name": "GAURAV SHARM A",
+    "job_title": "Backend Developer | Product Development & Scalable Solutions | AdonisJS & AWS Expert",
+    "location": "India",
+    "phone": "+91 77377 15175",
+    "email": "hi@gauravds.com",
+    "website": "https://gauravds.com",
+    "years_of_experience": "12"
+  },
+  "professional_summary": "A strong advocate for innovative IT SaaS solutions and scalable product development, demonstrated through strategic leadership and successful project delivery across diverse industries. Eager to contribute to significant advancements by utilizing an extensive skill set in API, AWS, and advanced CRM solutions. Proven track record of improving system efficiencies and customer satisfaction, aligning with a progressive mission to drive success with vision, strategy, and agile execution.",
+  "skills": [
+    "AdonisJS",
+    "ExpressJS",
+    "Node.js",
+    "Vue.js",
+    "Nuxt.js",
+    "ReactJS",
+    "Next.js",
+    "MySQL",
+    "MongoDB",
+    "PostgresSQL",
+    "GraphQL",
+    "JavaScript",
+    "TypeScript",
+    "ElasticSearch",
+    "ELK",
+    "Redis",
+    "Caching",
+    "CI/CD",
+    "GitHub",
+    "GitHub Action",
+    "FastLane",
+    "Docker",
+    "TDD",
+    "BDD",
+    "AWS",
+    "Lambda",
+    "EC2",
+    "MicroServices",
+    "Kafka",
+    "BLE",
+    "Bluetooth",
+    "IoT",
+    "Data Science",
+    "Golang",
+    "gRPC",
+    "Ionic",
+    "iOS",
+    "Objective-C",
+    "Swift",
+    "React Native",
+    "Java",
+    "Mobile Apps",
+    "Chat Bots",
+    "AI Models",
+    "PHP",
+    "Laravel",
+    "Wordpress",
+    "Python",
+    "Ruby on Rails",
+    "Ruby",
+    "Figma",
+    "UI",
+    "SDK Building",
+    "Framework Creation",
+    "Team Building & Training",
+    "Product Management",
+    "Feature Grooming",
+    "Project Management",
+    "Entrepreneurship",
+    "Business Development",
+    "Problem Solving",
+    "Outcome Oriented Solution Approach",
+    "System Design",
+    "Technical Cost Optimization",
+    "Data Analysis & Decision Making",
+    "Leadership",
+    "Adaptability & Innovation",
+    "Tech & Automation Understanding"
+  ],
+  "semantic_skills": [],
+  "certifications": [
+    "AWS Certified Solution Architect Associate",
+    "Complete Guide to Protocol Buffers 3",
+    "gRPC [Golang] Master Class: Build Modern API & Microservices",
+    "Go: The Complete Developer's Guide (Golang)",
+    "React Native - The Practical Guide",
+    "iOS 11 & Swift 4: From Beginner to Paid Professional\u2122",
+    "The Complete React Native and Redux Course",
+    "Master React Native Animations",
+    "React Native: Advanced Concepts",
+    "JavaScript Essentials"
+  ],
+  "education": [
+    {
+      "degree": "Master of Technology - Computer Science & Engineering",
+      "institution": "ABV - Indian Institute of Information Technology & Management",
+      "start_year": "2012-07",
+      "end_year": "2014-05",
+      "location": "Gwalior, India"
+    },
+    {
+      "degree": "Bachelor of Technology Honors - Computer Science & Engineering",
+      "institution": "Jaipur Engineering College",
+      "start_year": "2007-08",
+      "end_year": "2011-06",
+      "location": "Jaipur, India"
+    }
+  ],
+  "work_experience": [
+    {
+      "job_title": "Co-Founder And CTO",
+      "company": "WebLedger Solutions Pvt. Ltd.",
+      "start_date": "2023-01",
+      "end_date": "Present",
+      "location": "India",
+      "description": "- Provided strategic guidance and technical expertise to clients across various industries.\n- Planned & Successfully led and delivered complex technology projects.\n- Conducted comprehensive assessments and designed innovative solutions.\n- Collaborated with cross-functional teams and executives.\n- Achieved a 15% faster deployment cycle by optimizing AWS infrastructure.\n- Managed a team handling over 100 API integrations in diverse projects.\n- Increased data processing speed by 30% by implementing advanced caching techniques.\n- Partnered with a lot of vendors to create seamless integration with the product."
+    },
+    {
+      "job_title": "Lead Technical Consultant",
+      "company": "TarkaLabs",
+      "start_date": "2022-11",
+      "end_date": "2023-01",
+      "location": "India",
+      "description": "- Reviewed & Increased system efficiency by architecting solutions as a polyglot developer.\n- Static site outcome for CMS engine to increase the speed of the product by 60%."
+    },
+    {
+      "job_title": "Technology Lead",
+      "company": "PAR | Punchh Inc.",
+      "start_date": "2018-04",
+      "end_date": "2022-10",
+      "location": "India",
+      "description": "- Gained platform efficiency by 225% by developing a robust Punchh technical and business framework.\n- Developed products across 4 platforms, enhancing functionality and user experience for a million users.\n- Increased data export efficiency by 135% by developing the Event Webhook Manager to solve delivery challenges."
+    },
+    {
+      "job_title": "Senior Software Engineer",
+      "company": "PAR | Punchh Inc.",
+      "start_date": "2015-04",
+      "end_date": "2018-09",
+      "location": "India",
+      "description": "- Developed, modeled and shaped an online portal for app creation with Punchh App Center inspired by No-code Mobile App Development.\n- Designed mobile framework and SDK to decrease the app development time by 40%.\n- Elevated customer satisfaction scores by 30% by reducing application load times via optimized coding practices and upgrade the tech stacks.\n- Managed customer data for 5 million users using Punchh Zap Manager."
+    },
+    {
+      "job_title": "Sr. iOS App Developer",
+      "company": "Balaji Technology",
+      "start_date": "2014-06",
+      "end_date": "2015-04",
+      "location": "India",
+      "description": "- Developed 5 iOS applications at Balaji Technology, resulting in a 12% increase in revenue.\n- Worked on apps such as Skynanny (BLE based child tracking app), Face share (face recognition and share with your friends), and Passport App."
+    },
+    {
+      "job_title": "iOS App Developer",
+      "company": "Konstant Infosolutions",
+      "start_date": "2011-06",
+      "end_date": "2012-07",
+      "location": "India",
+      "description": "- Increased app download rate by 25% by developing 5 innovative iOS applications.\n- Managed 10 projects enhancing virtual card and social media app efficiency, resulting in a 25% performance boost on satisfaction."
+    }
+  ],
+  "projects": [],
+  "awards": [
+    "Outstanding Leadership Award - 2024, Internet Conference 2.0 Dubai",
+    "Punchh superstar - 2019, Awarded Punchh superstar for exceptional performance and delivery.",
+    "Punchh All Star - 2018, Recognized as a Punchh All Star for outstanding contributions to the team.",
+    "Innovative Mind of the Year - 2015, BLE based complex product development to innovate the solution.",
+    "GATE Qualified - 2012 & 2013, Two times qualified World's 4th toughest exam GATE with 99.91 percentile scores.",
+    "Accelerated Deployment Process, Reduced deployment time by 60% through CI/CD automation with Kubernetes and Docker."
+  ],
+  "languages": [],
+  "interests": [],
+  "career_insights": {
+    "resume_score": "",
+    "predicted_experience_level": "",
+    "branding_score": "",
+    "executive_summary": "",
+    "keywords_matched": [],
+    "job_fit_scores": [
+      {
+        "role": "",
+        "match_percentage": ""
+      }
+    ]
+  }
+}
