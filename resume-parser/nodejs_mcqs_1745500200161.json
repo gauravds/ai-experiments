@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the primary purpose of the `module.exports` object in Node.js?",
+    "options": {
+      "A": "To define global variables accessible throughout the application.",
+      "B": "To encapsulate and expose specific functionalities or data from a module.",
+      "C": "To manage dependencies between different modules in the application.",
+      "D": "To define the entry point of the Node.js application."
+    },
+    "answer": "B",
+    "level": 3
+  },
+  {
+    "question": "What does the `EventEmitter` class in Node.js provide?",
+    "options": {
+      "A": "A mechanism for handling HTTP requests and responses.",
+      "B": "A base class for creating objects that can emit and listen for custom events.",
+      "C": "A utility for managing file system operations asynchronously.",
+      "D": "A module for creating and managing child processes."
+    },
+    "answer": "B",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is the correct way to import the `fs` module in Node.js?",
+    "options": {
+      "A": "`import fs from 'fs';`",
+      "B": "`const fs = require('fs');`",
+      "C": "`include('fs');`",
+      "D": "`const fs = import('fs');`"
+    },
+    "answer": "B",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of the `process.nextTick()` function in Node.js?",
+    "options": {
+      "A": "To execute a callback function immediately after the current operation completes on the next event loop iteration.",
+      "B": "To delay the execution of a callback function for a specified amount of time.",
+      "C": "To execute a callback function at the end of the current event loop iteration.",
+      "D": "To prioritize the execution of a callback function over other pending tasks."
+    },
+    "answer": "A",
+    "level": 3
+  },
+  {
+    "question": "What is the output of the following code snippet?\n```javascript\nconsole.log(1 + '1');\n```",
+    "options": {
+      "A": "`2`",
+      "B": "`11`",
+      "C": "`'11'`",
+      "D": "`Error`"
+    },
+    "answer": "C",
+    "level": 3
+  },
+  {
+    "question": "Which of the following statements about the `npm` (Node Package Manager) is correct?",
+    "options": {
+      "A": "It is used for managing operating system-level packages.",
+      "B": "It is a built-in module in Node.js for file system operations.",
+      "C": "It is a package manager specifically for installing and managing Node.js packages.",
+      "D": "It is a tool for bundling JavaScript code for web browsers."
+    },
+    "answer": "C",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of the `Buffer` class in Node.js?",
+    "options": {
+      "A": "To provide a way to store and manipulate JSON data.",
+      "B": "To handle asynchronous operations using callbacks.",
+      "C": "To represent a fixed-size chunk of memory for working with binary data.",
+      "D": "To manage network connections using sockets."
+    },
+    "answer": "C",
+    "level": 3
+  },
+  {
+    "question": "What is the significance of `__dirname` in a Node.js module?",
+    "options": {
+      "A": "It refers to the global Node.js environment variables.",
+      "B": "It represents the current working directory of the Node.js process.",
+      "C": "It holds the absolute path of the directory containing the current module file.",
+      "D": "It contains the list of all installed npm packages."
+    },
+    "answer": "C",
+    "level": 3
+  },
+  {
+    "question": "Given the following code, what will be the output?\n```javascript\nconst myObject = { \n  message: 'Hello', \n  getMessage: function() {\n    console.log(this.message);\n  }\n};\n\nsetTimeout(myObject.getMessage, 1000);\n```",
+    "options": {
+      "A": "`Hello`",
+      "B": "`undefined`",
+      "C": "Error",
+      "D": "Null"
+    },
+    "answer": "B",
+    "level": 3
+  },
+  {
+    "question": "What is the use of the `child_process` module in Node.js?",
+    "options": {
+      "A": "To perform mathematical operations.",
+      "B": "To create new threads in the Node.js application.",
+      "C": "To spawn child processes to execute system commands or other programs.",
+      "D": "To handle file uploads."
+    },
+    "answer": "C",
+    "level": 3
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "question": "Which HTML element is used to define the structure of an HTML document?",
+    "options": {
+      "A": "`<head>`",
+      "B": "`<body>`",
+      "C": "`<html>`",
+      "D": "`<structure>`"
+    },
+    "answer": "C",
+    "level": 1
+  },
+  {
+    "question": "What does the `alt` attribute in the `<img>` tag specify?",
+    "options": {
+      "A": "Alternative styling for the image",
+      "B": "A link to an alternative version of the image",
+      "C": "Alternative text for the image if it cannot be displayed",
+      "D": "The alignment of the image"
+    },
+    "answer": "C",
+    "level": 2
+  },
+  {
+    "question": "Which HTML tag is used to define an internal style sheet?",
+    "options": {
+      "A": "`<css>`",
+      "B": "`<style>`",
+      "C": "`<script>`",
+      "D": "`<link>`"
+    },
+    "answer": "B",
+    "level": 3
+  },
+  {
+    "question": "What is the correct HTML for creating a hyperlink?",
+    "options": {
+      "A": "`<a url=\"http://example.com\">Example</a>`",
+      "B": "`<a href=\"http://example.com\">Example</a>`",
+      "C": "`<link href=\"http://example.com\">Example</link>`",
+      "D": "`<url>http://example.com</url>`"
+    },
+    "answer": "B",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is the correct HTML for inserting a line break?",
+    "options": {
+      "A": "`<break>`",
+      "B": "`<lb>`",
+      "C": "`<br>`",
+      "D": "`<newline>`"
+    },
+    "answer": "C",
+    "level": 1
+  },
+  {
+    "question": "Given the following HTML structure, what is the correct CSS selector to target all `<li>` elements inside the `<ul>` with the id 'myList'?",
+    "options": {
+      "A": "`#myList > li`",
+      "B": "`ul#myList li`",
+      "C": "`ul #myList > li`",
+      "D": "`#myList li`"
+    },
+    "answer": "D",
+    "level": 5
+  },
+  {
+    "question": "What does the following HTML code do? ```html <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> ```",
+    "options": {
+      "A": "Sets the zoom level of the page to 100%",
+      "B": "Configures the viewport for mobile devices, setting the width to the device width and initial zoom scale to 1.0",
+      "C": "Defines the maximum zoom level for the page",
+      "D": "Sets the page width to 1000 pixels"
+    },
+    "answer": "B",
+    "level": 4
+  },
+  {
+    "question": "Which HTML element is used to embed external JavaScript code?",
+    "options": {
+      "A": "`<script>`",
+      "B": "`<javascript>`",
+      "C": "`<js>`",
+      "D": "`<embed>`"
+    },
+    "answer": "A",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of the `fieldset` element in HTML forms?",
+    "options": {
+      "A": "To define a set of radio buttons",
+      "B": "To group related elements in a form",
+      "C": "To define a required field in a form",
+      "D": "To create a table within a form"
+    },
+    "answer": "B",
+    "level": 4
+  },
+  {
+    "question": "Which HTML tag is used to display a picture?",
+    "options": {
+      "A": "`<image>`",
+      "B": "`<picture>`",
+      "C": "`<src>`",
+      "D": "`<img>`"
+    },
+    "answer": "D",
+    "level": 1
+  }
+]
