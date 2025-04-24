@@ -1,9 +1,9 @@
 import json
 import os
-from dotenv import load_dotenv
-from typing import List, Dict, Any
-from openai import OpenAI
 import time
+from dotenv import load_dotenv
+from typing import List, Dict, Any, Optional
+from openai import OpenAI
 
 load_dotenv()
 
@@ -73,19 +73,23 @@ def generate_mcqs(
     topic: str,
     num_sets: int = 10,
     difficulty: int = 5,
-    code_questions: bool = False,
+    code_percentage: Optional[int] = None,
     extra_notes: str = None,
 ) -> List[Dict[str, Any]]:
     # Base prompt
     user_prompt = f"Generate {num_sets} multiple choice questions about {topic} with difficulty level {difficulty} on a scale of 1-10."
 
     # Add code-related instruction if requested
-    if code_questions:
-        user_prompt += "\nInclude at least 30% code-related questions with code snippets in the questions and/or answer options."
+    if code_percentage and code_percentage > 0:
+        user_prompt += f"\nInclude approximately {code_percentage}% code-related questions with code snippets in the questions and/or answer options."
 
     # Add any extra notes from the user
     if extra_notes:
         user_prompt += f"\nAdditional instructions: {extra_notes}"
+
+    print(
+        f"\n\ttopic: {topic}, num_sets: {num_sets}, difficulty: {difficulty}, code_percentage: {code_percentage}, extra_notes: {extra_notes};\n\n\t\t User prompt: {user_prompt}\n\n"
+    )
 
     response = client.chat.completions.create(
         model="gemini-2.0-flash",
@@ -150,15 +154,23 @@ def save_mcqs_to_file(mcqs: List[Dict[str, Any]], filename: str = "mcqs.json"):
 
 
 if __name__ == "__main__":
-    topic = input("Enter the topic for MCQs (e.g., Node.js): ")
+    topic = input("*Enter the topic for MCQs (e.g., Node.js) {required question}: ")
     try:
-        num_sets = int(input("Enter the number of MCQ sets to generate: "))
+        num_sets = int(
+            input(
+                "Enter the number of MCQ sets to generate {optional question press enter for default:10}: "
+            )
+        )
     except ValueError:
         print("Invalid number, using default of 10")
         num_sets = 10
 
     try:
-        difficulty = int(input("Enter difficulty level (1-10, where 10 is hardest): "))
+        difficulty = int(
+            input(
+                "Enter difficulty level (1-10, where 10 is hardest) {optional question press enter for default:5}: "
+            )
+        )
         if difficulty < 1 or difficulty > 10:
             print("Invalid difficulty level, using default of 5")
             difficulty = 5
@@ -166,20 +178,39 @@ if __name__ == "__main__":
         print("Invalid difficulty level, using default of 5")
         difficulty = 5
 
-    code_questions = (
-        input("Include code-related questions? (y/n): ").lower().startswith("y")
+    # Ask about code-related questions
+    include_code = (
+        input(
+            "Include code-related questions? (y/n) {optional question press enter for default:n}: "
+        )
+        .lower()
+        .startswith("y")
     )
+    code_percentage = None
+    if include_code:
+        try:
+            code_percentage = int(
+                input(
+                    "What percentage of questions should include code snippets? (0-100) {optional question press enter for default:30}: "
+                )
+            )
+            if code_percentage < 0 or code_percentage > 100:
+                print("Invalid percentage, using 30% as default")
+                code_percentage = 30
+        except ValueError:
+            print("Invalid input, using 30% as default")
+            code_percentage = 30
 
     # Additional notes prompt
     extra_notes = input(
-        "Any additional notes for the question generator? (press Enter to skip): "
+        "Any additional notes for the question generator? (press Enter to skip) {optional question press enter for default:none}: "
     )
 
     mcqs = generate_mcqs(
         topic,
         num_sets,
         difficulty,
-        code_questions=code_questions,
+        code_percentage=code_percentage,
         extra_notes=extra_notes if extra_notes else None,
     )
 

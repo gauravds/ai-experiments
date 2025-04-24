@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the output of the following Python code?\n```python\ndef outer_function(x):\n    def inner_function(y):\n        return x + y\n    return inner_function\n\nclosure = outer_function(10)\nprint(closure(5))```",
+    "options": {
+      "A": "`5`",
+      "B": "`10`",
+      "C": "`15`",
+      "D": "Error"
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to define a generator function in Python?",
+    "options": {
+      "A": "```python\ndef my_generator(n):\n    return [i for i in range(n)]```",
+      "B": "```python\ndef my_generator(n):\n    for i in range(n):\n        yield i```",
+      "C": "```python\ndef my_generator(n):\n    return (i for i in range(n))```",
+      "D": "```python\ndef my_generator(n):\n    print(list(range(n)))```"
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `__init__.py` file in a Python package?",
+    "options": {
+      "A": "It is the main entry point of the package.",
+      "B": "It specifies the dependencies of the package.",
+      "C": "It indicates that the directory should be treated as a Python package.",
+      "D": "It contains the license information for the package."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is the output of the following code?\n```python\nclass MyClass:\n    def __init__(self, value):\n        self._my_attribute = value\n\n    @property\n    def my_attribute(self):\n        return self._my_attribute\n\n    @my_attribute.setter\n    def my_attribute(self, value):\n        self._my_attribute = value\n\nobj = MyClass(5)\nobj.my_attribute = 10\nprint(obj.my_attribute)```",
+    "options": {
+      "A": "`5`",
+      "B": "`10`",
+      "C": "`_my_attribute`",
+      "D": "Error"
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following statements about Python decorators is most accurate?",
+    "options": {
+      "A": "Decorators can only modify class methods.",
+      "B": "Decorators are a way to dynamically add or modify behavior of functions or classes.",
+      "C": "Decorators are used for defining abstract methods.",
+      "D": "Decorators are exclusive to object-oriented programming."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What does the `*args` parameter in a Python function allow you to do?",
+    "options": {
+      "A": "Pass a fixed number of arguments to the function.",
+      "B": "Pass a variable number of keyword arguments to the function.",
+      "C": "Pass a variable number of non-keyword arguments to the function.",
+      "D": "Specify the data type of the arguments."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is the output of the following Python code?\n```python\nmy_list = [1, 2, 3, 4, 5]\nnew_list = list(map(lambda x: x * 2, my_list))\nprint(new_list)```",
+    "options": {
+      "A": "`[1, 2, 3, 4, 5]`",
+      "B": "`[2, 4, 6, 8, 10]`",
+      "C": "`[2, 4, 6]`",
+      "D": "Error"
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `finally` block in a `try-except` statement?",
+    "options": {
+      "A": "It is executed only if an exception occurs.",
+      "B": "It is executed only if no exception occurs.",
+      "C": "It is always executed, regardless of whether an exception occurs or not.",
+      "D": "It is used to define custom exception classes."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is the output of the following code?\n```python\ndef foo(a=[]):\n    a.append(1)\n    return a\n\nprint(foo())\nprint(foo())```",
+    "options": {
+      "A": "`[1]\\n[1]`",
+      "B": "`[1]\\n[1, 1]`",
+      "C": "`[1, 1]\\n[1, 1]`",
+      "D": "`[1]\\n[]`"
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following libraries is commonly used for numerical computations in Python?",
+    "options": {
+      "A": "`requests`",
+      "B": "`BeautifulSoup`",
+      "C": "`NumPy`",
+      "D": "`Flask`"
+    },
+    "answer": "C",
+    "level": 5
+  }
+]

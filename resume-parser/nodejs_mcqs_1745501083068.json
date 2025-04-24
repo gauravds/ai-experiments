@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the primary purpose of the `EventEmitter` class in Node.js?",
+    "options": {
+      "A": "To manage file system operations.",
+      "B": "To handle asynchronous events and callbacks.",
+      "C": "To create HTTP servers and clients.",
+      "D": "To perform cryptographic operations."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to import a module named `my_module` in Node.js?",
+    "options": {
+      "A": "`import my_module from 'my_module';`",
+      "B": "`require('my_module');`",
+      "C": "`const my_module = include('my_module');`",
+      "D": "`using my_module = require('my_module');`"
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What does the `process.nextTick()` function do in Node.js?",
+    "options": {
+      "A": "Defers the execution of a callback function to the next event loop iteration.",
+      "B": "Executes a callback function immediately.",
+      "C": "Stops the Node.js process.",
+      "D": "Schedules a callback function to be executed after a specified delay."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `Buffer` class in Node.js?",
+    "options": {
+      "A": "To manage strings efficiently.",
+      "B": "To handle binary data.",
+      "C": "To perform mathematical operations.",
+      "D": "To store JSON data."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Given the following code, what will be the output?\n```javascript\nconst fs = require('fs');\n\nfs.readFile('myfile.txt', 'utf8', (err, data) => {\n  if (err) throw err;\n  console.log(data);\n});\n\nconsole.log('Reading file...');\n```",
+    "options": {
+      "A": "The code will always print 'Reading file...' first, followed by the contents of 'myfile.txt'.",
+      "B": "The code will print the contents of 'myfile.txt' first, followed by 'Reading file...'.",
+      "C": "The order of output is unpredictable due to the asynchronous nature of `fs.readFile`.",
+      "D": "The code will throw an error because `fs.readFile` is synchronous."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is the significance of the `module.exports` object in Node.js?",
+    "options": {
+      "A": "It defines the main entry point of a Node.js application.",
+      "B": "It allows you to export functions, objects, or values from a module to be used in other modules.",
+      "C": "It manages dependencies between modules.",
+      "D": "It is used for creating HTTP servers."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is a valid method for creating a simple HTTP server in Node.js?",
+    "options": {
+      "A": "```javascript\nrequire('http').createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello World!');\n}).listen(3000);\n```",
+      "B": "```javascript\nhttp.server((req, res) => {\n  res.status(200).send('Hello World!');\n}).start(3000);\n```",
+      "C": "```javascript\ncreateServer((req, res) => {\n  res.writeHeader(200, {'Content-Type': 'text/plain'});\n  res.close('Hello World!');\n}).listen(3000);\n```",
+      "D": "```javascript\nconst server = new http.Server();\nserver.on('request', (req, res) => {\n  res.send('Hello World!');\n}).listen(3000);\n```"
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of middleware in Express.js (a Node.js framework)?",
+    "options": {
+      "A": "To define database schemas.",
+      "B": "To handle HTTP requests and responses.",
+      "C": "To execute code during the request-response cycle, allowing you to modify requests, responses, or terminate the cycle.",
+      "D": "To manage file system operations."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What does the term 'Callback Hell' refer to in Node.js?",
+    "options": {
+      "A": "A situation where callback functions are poorly documented.",
+      "B": "A situation with deeply nested callbacks, making code difficult to read and maintain.",
+      "C": "A situation where callback functions are not used correctly.",
+      "D": "A situation where too many asynchronous operations are performed simultaneously."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is NOT a core module in Node.js?",
+    "options": {
+      "A": "`http`",
+      "B": "`fs`",
+      "C": "`path`",
+      "D": "`lodash`"
+    },
+    "answer": "D",
+    "level": 5
+  }
+]

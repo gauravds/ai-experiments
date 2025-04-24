@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the primary difference between the `==` operator and the `is` operator in Python?",
+    "options": {
+      "A": "`==` compares the values of two objects, while `is` compares their memory addresses.",
+      "B": "`==` compares the memory addresses of two objects, while `is` compares their values.",
+      "C": "`==` is used for comparing numbers, while `is` is used for comparing strings.",
+      "D": "`==` performs a shallow comparison, while `is` performs a deep comparison."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to implement a decorator in Python?",
+    "options": {
+      "A": "```python\ndef my_decorator(func):\n  def wrapper(*args, **kwargs):\n    # Do something before\n    result = func(*args, **kwargs)\n    # Do something after\n    return result\n  return wrapper\n\n@my_decorator\ndef my_function():\n  pass\n```",
+      "B": "```python\ndef my_decorator(func):\n  # Do something before\n  result = func()\n  # Do something after\n  return result\n\n@my_decorator\ndef my_function():\n  pass\n```",
+      "C": "```python\ndef my_decorator(func):\n  def wrapper():\n    # Do something before\n    result = func()\n    # Do something after\n    return result\n  return wrapper\n\nmy_function = my_decorator(my_function)\n```",
+      "D": "```python\ndef my_decorator(func):\n  # Do something before\n  func()\n  # Do something after\n  return\n\n@my_decorator\ndef my_function():\n  pass\n```"
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `__slots__` attribute in a Python class?",
+    "options": {
+      "A": "To define a fixed set of attribute names, saving memory and preventing dynamic attribute creation.",
+      "B": "To specify the order in which attributes are inherited from parent classes.",
+      "C": "To automatically generate getter and setter methods for class attributes.",
+      "D": "To restrict access to certain attributes, making them private."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is a mutable data type in Python?",
+    "options": {
+      "A": "`tuple`",
+      "B": "`string`",
+      "C": "`int`",
+      "D": "`list`"
+    },
+    "answer": "D",
+    "level": 5
+  },
+  {
+    "question": "What is a metaclass in Python?",
+    "options": {
+      "A": "A class that defines the behavior of other classes.",
+      "B": "A built-in class for handling metadata.",
+      "C": "A class that automatically generates documentation.",
+      "D": "A class used for creating singleton objects."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "How does Python handle multiple inheritance, and what is the method resolution order (MRO)?",
+    "options": {
+      "A": "Python uses depth-first, left-to-right MRO.",
+      "B": "Python uses breadth-first, right-to-left MRO.",
+      "C": "Python uses C3 linearization algorithm for MRO.",
+      "D": "Python randomly selects the method from the parent classes."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of `functools.lru_cache`?",
+    "options": {
+      "A": "It's a decorator for caching the results of a function to improve performance.",
+      "B": "It's a function for creating a least recently used (LRU) queue.",
+      "C": "It's a module for managing logging configurations.",
+      "D": "It's a tool for running garbage collection manually."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the difference between `staticmethod` and `classmethod` in Python?",
+    "options": {
+      "A": "`staticmethod` receives an implicit first argument, while `classmethod` does not.",
+      "B": "`classmethod` receives an implicit first argument, while `staticmethod` does not.",
+      "C": "Both receive an implicit first argument, but they behave differently with inheritance.",
+      "D": "There is no difference; they are interchangeable."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the Global Interpreter Lock (GIL) in Python?",
+    "options": {
+      "A": "A mechanism that allows multiple threads to execute Python bytecode concurrently.",
+      "B": "A lock that allows only one thread to hold control of the Python interpreter at any one time.",
+      "C": "A tool for managing global variables in a multithreaded environment.",
+      "D": "A feature for preventing deadlocks in concurrent programs."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to raise a custom exception in Python?",
+    "options": {
+      "A": "`raise Exception('My custom error message')`",
+      "B": "`throw MyException('My custom error message')`",
+      "C": "`raise new MyException('My custom error message')`",
+      "D": "`except MyException as e: print(e)`"
+    },
+    "answer": "A",
+    "level": 5
+  }
+]

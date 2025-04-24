@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What is the primary difference between the `==` operator and the `is` operator in Python?",
+    "options": {
+      "A": "`==` compares the values of two objects; `is` compares their memory locations.",
+      "B": "`==` compares the memory locations of two objects; `is` compares their values.",
+      "C": "`==` is used for numerical comparisons; `is` is used for string comparisons.",
+      "D": "`==` always returns `True`; `is` returns `False` if the objects are different types."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `__slots__` attribute in a Python class?",
+    "options": {
+      "A": "To define default values for class attributes.",
+      "B": "To prevent the creation of new attributes after object instantiation, saving memory.",
+      "C": "To specify the order in which attributes are accessed.",
+      "D": "To create a read-only attribute."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to implement a decorator that accepts arguments?",
+    "options": {
+      "A": "```python\ndef my_decorator(arg):\n def wrapper(func):\n return func(arg)\n return wrapper```",
+      "B": "```python\ndef my_decorator(func, arg):\n def wrapper():\n return func(arg)\n return wrapper```",
+      "C": "```python\ndef my_decorator(arg):\n def wrapper(func):\n def inner(*args, **kwargs):\n # Do something with arg\n return func(*args, **kwargs)\n return inner\n return wrapper```",
+      "D": "```python\ndef my_decorator(func):\n def wrapper(arg):\n return func(arg)\n return wrapper```"
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What does the `yield` keyword do in a Python function?",
+    "options": {
+      "A": "It defines a regular function.",
+      "B": "It returns a value and terminates the function execution.",
+      "C": "It defines a generator function, producing a sequence of values over time.",
+      "D": "It raises an exception."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "What is a metaclass in Python?",
+    "options": {
+      "A": "A subclass of all classes.",
+      "B": "A class that defines the behavior of other classes.",
+      "C": "A function that creates classes dynamically.",
+      "D": "A module for handling metadata."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `functools.lru_cache` decorator?",
+    "options": {
+      "A": "To limit the number of recursive calls.",
+      "B": "To cache the results of a function call, improving performance for repeated calls with the same arguments.",
+      "C": "To log function calls.",
+      "D": "To validate function arguments."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the difference between `staticmethod` and `classmethod`?",
+    "options": {
+      "A": "`staticmethod` receives an implicit first argument, while `classmethod` does not.",
+      "B": "`classmethod` receives an implicit first argument, while `staticmethod` does not.",
+      "C": "There is no difference; they are interchangeable.",
+      "D": "`staticmethod` can only access class attributes, while `classmethod` can only access instance attributes."
+    },
+    "answer": "B",
+    "level": 5
+  },
+  {
+    "question": "What is the purpose of the `__name__ == '__main__'` condition in a Python script?",
+    "options": {
+      "A": "To prevent the script from being executed if imported as a module.",
+      "B": "To ensure the script is executed only once.",
+      "C": "To define the main function of the script.",
+      "D": "To set the script's name attribute."
+    },
+    "answer": "A",
+    "level": 5
+  },
+  {
+    "question": "What is the Global Interpreter Lock (GIL) in Python?",
+    "options": {
+      "A": "A lock that prevents multiple threads from accessing the same memory location.",
+      "B": "A lock that allows multiple native threads to execute Python bytecode concurrently.",
+      "C": "A mutex that allows only one thread to hold control of the Python interpreter.",
+      "D": "A mechanism for preventing deadlocks in multithreaded Python programs."
+    },
+    "answer": "C",
+    "level": 5
+  },
+  {
+    "question": "Which of the following is the correct way to create an abstract class in Python?",
+    "options": {
+      "A": "```python\nclass MyAbstractClass:\n pass```",
+      "B": "```python\nfrom abc import ABC, abstractmethod\nclass MyAbstractClass(ABC):\n @abstractmethod\n def my_method(self): pass```",
+      "C": "```python\nclass MyAbstractClass:\n abstract = True\n def my_method(self): pass```",
+      "D": "```python\nclass MyAbstractClass:\n def my_method(self):\n raise NotImplementedError```"
+    },
+    "answer": "B",
+    "level": 5
+  }
+]
