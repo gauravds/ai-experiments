@@ -1,0 +1,8 @@
+# Core dependencies
+pylint>=2.15.0
+black>=22.8.0
+
+# Optional dependencies for enhanced functionality
+colorama>=0.4.5  # For colored terminal output
+pytest>=7.0.0    # For testing code
+mypy>=0.971      # For type checking 
