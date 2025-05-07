@@ -16,9 +16,6 @@ __pycache__/
 # for mac
 .DS_Store
 
-# for pyproject.toml
-pyproject.toml
-
 # for poetry.lock
 poetry.lock
 
